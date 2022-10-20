@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -6,7 +5,7 @@ import axios from "axios";
 function App() {
   const [message, updateMessage] = useState("")
   useEffect(() => {
-	axios.post("http://localhost:5000/hi", {hifrom: "usher the chair"}).then(x => updateMessage(x.data))
+	  axios.post(`${process.env.REACT_APP_API_URL}/hi`, {hifrom: "usher the chair"}).then(x => updateMessage(x.data))
   })
   return (
     <div className="App">
