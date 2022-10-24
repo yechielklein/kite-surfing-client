@@ -8,7 +8,7 @@ function App() {
 		axios.get(
 			`${process.env.REACT_APP_API_URL}/kites`
 		).then(x => updateKites(x.data))
-	})
+	}, [])
 	return (
 		<div className="App">
     	<header className="App-header">
