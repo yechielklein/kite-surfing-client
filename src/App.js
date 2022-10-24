@@ -6,7 +6,8 @@ function App() {
 	const [kites, updateKites] = useState([])
 	useEffect(() => {
 		axios.get(
-			`${process.env.REACT_APP_API_URL}/kites`
+			`${process.env.REACT_APP_API_URL}/kites`,
+			{name: 'test', email: 'test@gmail.com'}
 		).then(x => updateKites(x.data))
 	}, [])
 	return (
