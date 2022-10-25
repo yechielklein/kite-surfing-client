@@ -4,24 +4,27 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const App = () => (
-	<div className="App">
-		<h1>Welcome to kite surfing client</h1>
-		<Routes>
-			<Route path="/" element={<Home />} />
-			<Route path="kites" element={<Kites />} />
-		</Routes>
-	</div>
+    <div className="App">
+        <h1>Welcome to kite surfing client</h1>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="kites" element={<Kites />} />
+            <Route path="signup" element={<SignUp />} />
+        </Routes>
+    </div>
 );
 
-const Home = () =>(
-	<div>
-		<main>
-			<h2>Welcome to the homepage!</h2>
-		</main>
-		<nav>
-			<Link to="/kites">Kites</Link>
-		</nav>
-	</div>
+const Home = () => (
+    <div>
+        <main>
+            <h2>Welcome to the homepage!</h2>
+        </main>
+        <nav>
+            <Link to="/kites">Kites</Link>
+			&nbsp;
+            <Link to="/signup">Sign Up</Link>
+        </nav>
+    </div>
 );
 
 const Kites = () => {
@@ -44,6 +47,17 @@ const Kites = () => {
         </div>
     );
 }
+
+const SignUp = () => (
+    <div>
+		<input onSubmit={(input) => {console.log(input)}}></input>
+        <nav>
+            <Link to="/">Home</Link>
+			&nbsp;
+            <Link to="/kites">Kites</Link>
+        </nav>
+    </div>
+);
 
 const Kite = (props) => (
     <p>
