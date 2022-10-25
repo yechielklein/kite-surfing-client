@@ -50,7 +50,7 @@ const Kites = () => {
 
 const SignUp = () => (
     <div>
-		<input onSubmit={(input) => {console.log(input)}}></input>
+		<input></input>
         <nav>
             <Link to="/">Home</Link>
 			&nbsp;
