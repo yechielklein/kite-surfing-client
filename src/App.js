@@ -53,31 +53,51 @@ const handleSubmit = async (event) => {
 			{
 				name: document.getElementById('name').value,
 				email: document.getElementById('email').value,
-				password: document.getElementById('password').value === document.getElementById('confirm password').value ? document.getElementById('password').value : undefined
+				password: document.getElementById('password').value
 			}
 		)
 	)
-	
 };
 
 const SignUp = () => (
     <div>
-         <form onSubmit={handleSubmit}>
-            Name: <input id='name' name='name' placeholder='John Doe' />
-            <br /><br />
-            Email: <input type='email' id='email' name='email' placeholder='johndoe@example.com' required />
-            <br /><br />
-            Password: <input id='password' name='password' required />
-            <br /><br />
-            Confirm Password: <input id='confirm password' name='confirm password' required />
-            <br /><br />
-            <input type='submit' value='Sign up' />
+        <form onSubmit={handleSubmit}>
+            Name:&nbsp;
+            <input id="name" placeholder="John Doe" />
+            <br />
+            <br />
+            Email*:&nbsp;
+            <input
+                type="email"
+                id="email"
+                placeholder="johndoe@example.com"
+                required
+            />
+            <br />
+            <br />
+            Password*:&nbsp;
+            <input
+                type="password"
+                id="password"
+                required
+				placeholder='Password123'
+                pattern="(?=^.{8,}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$"
+            />
+            <br />
+            (Must have a capital letter, a lowercase letter and a number)
+            <br />
+            <br />
+            <input
+				type="submit"
+				value="Sign up"
+			/>
         </form>
-		<br /><br />
+        <br />
+        <br />
         <nav>
-            <Link to='/'>Home</Link>
+            <Link to="/">Home</Link>
             &nbsp;
-            <Link to='/kites'>Kites</Link>
+            <Link to="/kites">Kites</Link>
         </nav>
     </div>
 );
