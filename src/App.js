@@ -36,25 +36,48 @@ const Kites = () => {
     }, []);
 	return (
         <div className="App-header">
-            <p>
-                {kites.map((k) => (
-                    <Kite {...k} />
-                ))}
-            </p>
+            <main>
+                {kites.map((k) => <Kite {...k} /> )}
+            </main>
 			<nav>
 				<Link to="/">Home</Link>
 			</nav>
         </div>
     );
-}
+};
+
+const handleSubmit = async (event) => {
+	console.log(
+		await axios.post(
+			`${process.env.REACT_APP_API_URL}/signup`,
+			{
+				name: document.getElementById('name').value,
+				email: document.getElementById('email').value,
+				password: document.getElementById('password').value === document.getElementById('confirm password').value ? document.getElementById('password').value : undefined
+			}
+		)
+	)
+	
+};
 
 const SignUp = () => (
     <div>
-		<input></input>
+         <form onSubmit={handleSubmit}>
+            Name: <input id='name' name='name' placeholder='John Doe' />
+            <br /><br />
+            Email: <input type='email' id='email' name='email' placeholder='johndoe@example.com' required />
+            <br /><br />
+            Password: <input id='password' name='password' required />
+            <br /><br />
+            Confirm Password: <input id='confirm password' name='confirm password' required />
+            <br /><br />
+            <input type='submit' value='Sign up' />
+        </form>
+		<br /><br />
         <nav>
-            <Link to="/">Home</Link>
-			&nbsp;
-            <Link to="/kites">Kites</Link>
+            <Link to='/'>Home</Link>
+            &nbsp;
+            <Link to='/kites'>Kites</Link>
         </nav>
     </div>
 );
