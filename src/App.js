@@ -15,7 +15,7 @@ const App = () => (
             <Route path="signup" element={<SignUp />} />
             <Route path="addkite" element={<AddKite />} />
         </Routes>
-		<br/>
+		<br />
 		<nav>
 		    <Link to="/">Home</Link> &nbsp;
 			<Link to="/kites">Available Kites</Link> &nbsp;
