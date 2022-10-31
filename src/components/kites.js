@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -14,11 +13,10 @@ const Kites = () => {
     return (
         <div className="App-header">
             <main>
-                {kites.map((k) => <Kite {...k} /> )}
+                {kites.map((k) => (
+                    <Kite {...k} />
+                ))}
             </main>
-            <nav>
-                <Link to="/">Home</Link>
-            </nav>
         </div>
     );
 };
