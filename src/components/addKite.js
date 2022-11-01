@@ -36,9 +36,9 @@ const AddKite = () => {
             <form onSubmit={handleSubmit}>
                 User ID*: &nbsp;
                 <input
-                    pattern="\d+"
                     value={sellerId}
                     onChange={(e) => updateSellerId(e.target.value)}
+                    pattern="\d+"
                     required
                 />
                 <br /> <br />
